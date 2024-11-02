@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyMed Entry - Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="branding">
+            <h1>MyMed Entry</h1>
+            <p class="slogan">Health information, anywhere...</p>
+        </div>
+        <a href="{{ url_for('logout') }}" class="logout-button">Logout</a>
+    </header>
+    <main>
+        {% if role == 'Patient' %}
+            <h2>Your Fitness Score: {{ fitness_score }}%</h2>
+            <img src="{{ url_for('static', filename='bmi_trend_graph.png') }}" alt="BMI Trend Graph">
+        {% endif %}
+        <h3>Available Sheets</h3>
+        <div class="sheet-buttons">
+            {% for sheet_name in sheet_names %}
+                <a href="{{ url_for('view_sheet', sheet_name=sheet_name) }}" class="sheet-button">{{ sheet_name }}</a>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>
+
+

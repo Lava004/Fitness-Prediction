@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Prediction - MyMed Entry</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+            background: #f0f8ff;
+            text-align: center;
+            color: #333;
+        }
+        h1 {
+            font-size: 36px;
+            color: #007BFF;
+        }
+        .result-box {
+            display: inline-block;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            width: 60%;
+        }
+        h2 {
+            color: #007BFF;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>MyMed Entry</h1>
+    <h2>Fitness Prediction</h2>
+    
+    <div class="result-box">
+        <p><strong>BMI:</strong> {{ bmi }}</p>
+        <p><strong>Average Heart Rate:</strong> {{ avg_heart_rate }} BPM</p>
+        <p><strong>Overall Fitness Score:</strong> {{ fitness_score }}</p>
+    </div>
+    
+    <a href="{{ url_for('home') }}" class="back-button">Back to Home</a>
+</body>
+</html>
